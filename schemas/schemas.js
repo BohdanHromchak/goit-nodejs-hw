@@ -20,12 +20,16 @@ const updateFavoriteSchema = Joi.object({
 });
 
 const registerSchema = Joi.object({
-  email: Joi.string().pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).required(),
+  email: Joi.string()
+    .pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+    .required(),
   password: Joi.string().min(6).required(),
 });
 
 const loginSchema = Joi.object({
-  email: Joi.string().pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).required(),
+  email: Joi.string()
+    .pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+    .required(),
   password: Joi.string().min(6).required(),
 });
 
