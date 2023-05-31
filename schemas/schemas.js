@@ -36,7 +36,8 @@ const loginSchema = Joi.object({
 const emailSchema = Joi.object({
   email: Joi.string()
     .pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
-    .required(),
+    .required()
+    .messages({ "any.required": "Missing required field email" }),
 });
 
 module.exports = {
